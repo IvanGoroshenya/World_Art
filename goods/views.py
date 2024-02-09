@@ -1,30 +1,16 @@
 from django.shortcuts import render
 
+from goods.models import Products
+
 
 def catalog(request):
+
+    goods = Products.objects.all()
+    
     context = {
         "title": "Home - Каталог",
-        "goods": [
-            {
-                "image": "deps/images/goods/set of tea table and three chairs.jpg",
-                "name": "Чайный столик и три стула",
-                "description": "Комплект из трёх стульев и дизайнерский столик для гостинной комнаты.",
-                "price": 150.00,
-            },
-            {
-                "image": "deps/images/goods/set of tea table and two chairs.jpg",
-                "name": "Чайный столик и два стула",
-                "description": "Набор из стола и двух стульев в минималистическом стиле.",
-                "price": 93.00,
-            },
-            {
-                "image": "deps/images/goods/double bed.jpg",
-                "name": "Двухспальная кровать",
-                "description": "Кровать двухспальная с надголовником и вообще очень ортопедичная.",
-                "price": 670.00,
-            },
+        "goods": goods
             
-        ],
     }
     return render(request, "goods/catalog.html",context)
 

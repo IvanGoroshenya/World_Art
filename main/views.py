@@ -4,11 +4,11 @@ from goods.models import Categories
 
 
 def index(request):
-    categories = Categories.objects.all()   #В административной панели хранятся все категории оттуда и берем их 
+    
     context = {
         'title':'World_Art - Главная',
         'content':'Магазин World Art',
-        'categories':categories
+       
     }
     
     return render(request,'main/index.html',context)
