@@ -1,6 +1,3 @@
-
-
-
 from carts.models import Cart
 
 
